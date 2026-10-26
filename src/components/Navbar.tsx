@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { profile } from "@/data/profile";
 
@@ -14,6 +15,9 @@ const links = [
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
+  const isActive = (href: string) =>
+    href === "/" ? pathname === "/" : pathname.startsWith(href);
   return (
     <header className="border-b border-[#2a2e35] bg-[#121417]">
       <nav
@@ -36,7 +40,11 @@ export default function Navbar() {
           <ul className="flex items-center gap-6">
             {links.map((link) => (
               <li key={link.href}>
-                <Link href={link.href} className="text-[#a8adb6] transition-colors hover:text-[#f2f1ec]">
+                <Link
+                  href={link.href}
+                  aria-current={isActive(link.href) ? "page" : undefined}
+                  className={`nav-link text-[#a8adb6] ${isActive(link.href) ? "nav-link-active" : ""}`}
+                >
                   {link.label}
                 </Link>
               </li>
@@ -44,7 +52,7 @@ export default function Navbar() {
           </ul>
           <Link
             href="/contact"
-            className="anim-pulse-blue inline-flex items-center justify-center rounded-md bg-[#3b82f6] px-4 py-2 font-medium text-white transition-colors hover:bg-[#2563eb]"
+            className="anim-btn-blue lift inline-flex items-center justify-center rounded-md bg-[#3b82f6] px-4 py-2 font-medium text-white transition-colors hover:bg-[#2563eb] active:scale-95"
           >
             Get in touch
           </Link>
@@ -54,7 +62,12 @@ export default function Navbar() {
         <ul className="space-y-3 border-t border-[#2a2e35] px-5 py-4 sm:hidden">
           {links.map((link) => (
             <li key={link.href}>
-              <Link href={link.href} onClick={() => setOpen(false)}>
+              <Link
+                href={link.href}
+                onClick={() => setOpen(false)}
+                aria-current={isActive(link.href) ? "page" : undefined}
+                className={`nav-link text-[#a8adb6] ${isActive(link.href) ? "nav-link-active" : ""}`}
+              >
                 {link.label}
               </Link>
             </li>
@@ -63,7 +76,7 @@ export default function Navbar() {
             <Link
               href="/contact"
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center rounded-md bg-[#3b82f6] px-4 py-2 font-medium text-white"
+              className="anim-btn-blue lift inline-flex items-center justify-center rounded-md bg-[#3b82f6] px-4 py-2 font-medium text-white active:scale-95"
             >
               Get in touch
             </Link>
