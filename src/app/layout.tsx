@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import { Libre_Franklin, Public_Sans, JetBrains_Mono } from "next/font/google";
+import { Sora, Manrope, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageFade from "@/components/PageFade";
 
-// Hosted portfolio font set: Libre Franklin for headings, Public Sans
-// for body, JetBrains Mono for small labels.
-const libreFranklin = Libre_Franklin({
+// Font set chosen by the user (preview option 2): Sora for headings,
+// Manrope for body, JetBrains Mono for small labels.
+const libreFranklin = Sora({
   variable: "--font-libre",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
 });
 
-const publicSans = Public_Sans({
+const publicSans = Manrope({
   variable: "--font-public",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
