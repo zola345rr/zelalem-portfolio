@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import SectionHeading from "@/components/SectionHeading";
 import Workflow from "@/components/Workflow";
 import { EthiopiaFlag, UkFlag } from "@/components/Flags";
+import { ProjectCategoryIcon, SkillGroupIcon } from "@/components/CategoryIcons";
 import { profile, projectAreas } from "@/data/profile";
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function AboutPage() {
         <ul className="mt-3 grid gap-4 sm:grid-cols-2">
           {projectAreas.map((area) => (
             <li key={area.title} className="min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-4 text-sm leading-relaxed text-[#a8adb6]">
+              <div className="mb-2"><ProjectCategoryIcon category={area.category} /></div>
               <span className="font-semibold text-[#f2f1ec]">{area.title}</span> — {area.summary}
             </li>
           ))}
@@ -70,7 +72,7 @@ export default function AboutPage() {
         <div className="grid gap-5 sm:grid-cols-2">
           {profile.skills.map((group) => (
             <article key={group.title} className={`min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5 ${group.wide ? "sm:col-span-2" : ""}`}>
-              <h2 className="font-semibold">{group.title}</h2>
+              <h2 className="flex items-center gap-2 font-semibold"><SkillGroupIcon title={group.title} />{group.title}</h2>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li key={item} className="rounded-full border border-[#2a2e35] px-3 py-1 text-sm text-[#a8adb6]">

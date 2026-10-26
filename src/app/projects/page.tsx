@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { projectAreas, projectCategories, profile, type ProjectCategory } from "@/data/profile";
+import { ProjectCategoryIcon } from "@/components/CategoryIcons";
 
 type Filter = "All" | ProjectCategory;
 
@@ -37,6 +38,7 @@ export default function ProjectsPage() {
       <ul className="mt-8 grid gap-5 sm:grid-cols-2">
         {visible.map((area) => (
           <li key={area.title} className="min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5 transition-colors hover:border-[#3b82f6]">
+            <div className="mb-2"><ProjectCategoryIcon category={area.category} /></div>
             <p className="text-sm text-[#3b82f6]">{area.category}</p>
             <h2 className="mt-2 font-semibold">{area.title}</h2>
             <p className="mt-2 text-sm leading-relaxed text-[#a8adb6]">{area.summary}</p>

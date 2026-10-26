@@ -4,6 +4,7 @@ import { LinkedInIcon, WhatsAppIcon } from "@/components/BrandIcons";
 import SectionHeading from "@/components/SectionHeading";
 import EvaluationVisual from "@/components/EvaluationVisual";
 import { EthiopiaFlag, UkFlag } from "@/components/Flags";
+import { ProjectCategoryIcon, SkillGroupIcon } from "@/components/CategoryIcons";
 import { profile, projectAreas } from "@/data/profile";
 
 export default function Home() {
@@ -78,6 +79,7 @@ export default function Home() {
         <ul className="grid gap-5 sm:grid-cols-2">
           {projectAreas.map((area, index) => (
             <li key={area.title} className="anim-rise lift min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5 transition-colors hover:border-[#3b82f6]" style={{ animationDelay: `${index * 0.08}s` }}>
+              <div className="mb-2"><ProjectCategoryIcon category={area.category} /></div>
               <p className="text-sm text-[#3b82f6]">{area.category}</p>
               <h3 className="mt-2 font-semibold">{area.title}</h3>
               <p className="mt-2 text-sm leading-relaxed text-[#a8adb6]">{area.summary}</p>
@@ -103,7 +105,7 @@ export default function Home() {
         <div className="grid gap-5 sm:grid-cols-2">
           {profile.skills.map((group, index) => (
             <article key={group.title} className={`anim-rise lift min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5 ${group.wide ? "sm:col-span-2" : ""}`} style={{ animationDelay: `${index * 0.08}s` }}>
-              <h3 className="font-semibold">{group.title}</h3>
+              <h3 className="flex items-center gap-2 font-semibold"><SkillGroupIcon title={group.title} />{group.title}</h3>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {group.items.map((item) => (
                   <li key={item} className="rounded-full border border-[#2a2e35] px-3 py-1 text-sm text-[#a8adb6]">
