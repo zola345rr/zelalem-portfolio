@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { MessageCircle, Phone } from "lucide-react";
+import { Phone } from "lucide-react";
+import { InstagramIcon, LinkedInIcon, WhatsAppIcon } from "@/components/BrandIcons";
 import { profile } from "@/data/profile";
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function ContactPage() {
       <ul className="mt-8 grid gap-3 sm:flex sm:flex-wrap">
         <li>
           <a href={profile.contacts.linkedin} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#0a66c2] px-4 py-2.5 font-medium text-white sm:w-auto">
-            LinkedIn
+            <LinkedInIcon size={18} /> LinkedIn
           </a>
         </li>
         <li>
@@ -30,12 +31,12 @@ export default function ContactPage() {
         </li>
         <li>
           <a href={profile.contacts.whatsapp} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#25d366] px-4 py-2.5 font-medium text-[#052e16] sm:w-auto">
-            <MessageCircle size={18} aria-hidden="true" /> Message me on WhatsApp
+            <WhatsAppIcon size={18} /> Message me on WhatsApp
           </a>
         </li>
         <li>
           <a href={profile.contacts.instagram} target="_blank" rel="noreferrer" className="inline-flex w-full items-center justify-center gap-2 rounded-md border border-[#2a2e35] px-4 py-2.5 font-medium sm:w-auto">
-            Instagram {profile.contacts.instagramHandle}
+            <InstagramIcon size={18} /> Instagram {profile.contacts.instagramHandle}
           </a>
         </li>
       </ul>

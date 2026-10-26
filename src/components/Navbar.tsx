@@ -5,6 +5,7 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { profile } from "@/data/profile";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const links = [
   { href: "/", label: "Home" },
@@ -27,16 +28,8 @@ export default function Navbar() {
         <Link href="/" className="text-lg font-semibold tracking-tight">
           {profile.name}
         </Link>
-        <button
-          type="button"
-          className="rounded-md p-2 sm:hidden"
-          aria-expanded={open}
-          aria-label={open ? "Close menu" : "Open menu"}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
-        </button>
-        <div className="hidden items-center gap-6 sm:flex">
+        <div className="flex items-center gap-3">
+          <div className="hidden items-center gap-6 sm:flex">
           <ul className="flex items-center gap-6">
             {links.map((link) => (
               <li key={link.href}>
@@ -56,6 +49,17 @@ export default function Navbar() {
           >
             Get in touch
           </Link>
+          </div>
+          <ThemeToggle />
+          <button
+            type="button"
+            className="rounded-md p-2 sm:hidden"
+            aria-expanded={open}
+            aria-label={open ? "Close menu" : "Open menu"}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? <X size={22} aria-hidden="true" /> : <Menu size={22} aria-hidden="true" />}
+          </button>
         </div>
       </nav>
       {open ? (

@@ -1,5 +1,6 @@
 import { profile } from "@/data/profile";
 import CvDownload from "@/components/CvDownload";
+import { InstagramIcon, LinkedInIcon, WhatsAppIcon } from "@/components/BrandIcons";
 
 export default function Footer() {
   return (
@@ -11,18 +12,18 @@ export default function Footer() {
         <nav aria-label="Footer links">
           <ul className="flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
             <li>
-              <a href={profile.contacts.linkedin} target="_blank" rel="noreferrer">
-                LinkedIn
+              <a href={profile.contacts.linkedin} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
+                <LinkedInIcon size={16} /> LinkedIn
               </a>
             </li>
             <li>
-              <a href={profile.contacts.instagram} target="_blank" rel="noreferrer">
-                Instagram
+              <a href={profile.contacts.instagram} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
+                <InstagramIcon size={16} /> Instagram
               </a>
             </li>
             <li>
-              <a href={profile.contacts.whatsapp} target="_blank" rel="noreferrer">
-                WhatsApp
+              <a href={profile.contacts.whatsapp} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
+                <WhatsAppIcon size={16} /> WhatsApp
               </a>
             </li>
             <li>

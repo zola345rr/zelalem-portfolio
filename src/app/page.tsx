@@ -1,5 +1,6 @@
 import Link from "next/link";
-import { ArrowRight, MessageCircle, Phone } from "lucide-react";
+import { ArrowRight, Phone } from "lucide-react";
+import { LinkedInIcon, WhatsAppIcon } from "@/components/BrandIcons";
 import SectionHeading from "@/components/SectionHeading";
 import EvaluationVisual from "@/components/EvaluationVisual";
 import { EthiopiaFlag, UkFlag } from "@/components/Flags";
@@ -40,7 +41,7 @@ export default function Home() {
             className="anim-btn-linkedin lift inline-flex items-center justify-center gap-2 rounded-md bg-[#0a66c2] px-4 py-2.5 font-medium text-white"
             style={{ animationDelay: "0.1s" }}
           >
-            LinkedIn
+            <LinkedInIcon size={18} /> LinkedIn
           </a>
           <Link
             href="/about"
@@ -56,7 +57,7 @@ export default function Home() {
             className="anim-btn-green lift inline-flex items-center justify-center gap-2 rounded-md bg-[#25d366] px-4 py-2.5 font-medium text-[#052e16]"
             style={{ animationDelay: "0.3s" }}
           >
-            <MessageCircle size={18} aria-hidden="true" /> WhatsApp
+            <WhatsAppIcon size={18} /> WhatsApp
           </a>
         </div>
       </section>
@@ -153,13 +154,13 @@ export default function Home() {
         <p className="mt-2 text-[#a8adb6]">{profile.contactIntro}</p>
         <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">
           <a href={profile.contacts.linkedin} target="_blank" rel="noreferrer" className="anim-btn-linkedin lift inline-flex items-center justify-center gap-2 rounded-md bg-[#0a66c2] px-4 py-2.5 font-medium text-white">
-            LinkedIn
+            <LinkedInIcon size={18} /> LinkedIn
           </a>
           <a href={`tel:${profile.contacts.phone}`} className="anim-rise lift inline-flex items-center justify-center gap-2 rounded-md border border-[#2a2e35] px-4 py-2.5 font-medium">
             <Phone size={18} aria-hidden="true" /> Call
           </a>
           <a href={profile.contacts.whatsapp} target="_blank" rel="noreferrer" className="anim-btn-green lift inline-flex items-center justify-center gap-2 rounded-md bg-[#25d366] px-4 py-2.5 font-medium text-[#052e16]">
-            <MessageCircle size={18} aria-hidden="true" /> Message me on WhatsApp
+            <WhatsAppIcon size={18} /> Message me on WhatsApp
           </a>
         </div>
       </section>

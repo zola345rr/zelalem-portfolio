@@ -265,3 +265,54 @@ button:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Light mode: the site is built with fixed dark hex utilities, so light
+   mode remaps exactly those utilities instead of rewriting every page.
+   Coloured buttons (blue, LinkedIn blue, teal, green) are unchanged,
+   so white/dark text on them stays readable. This block is unlayered
+   CSS after the Tailwind import, so it wins over the utilities. */
+.light body {
+  background-color: #f6f7f9;
+  color: #121417;
+}
+
+.light .bg-\[\#121417\] {
+  background-color: #ffffff;
+}
+
+.light .bg-\[\#1a1d22\] {
+  background-color: #ffffff;
+  box-shadow: 0 1px 3px rgba(18, 20, 23, 0.08);
+}
+
+.light .bg-\[\#2a2e35\] {
+  background-color: #e2e6eb;
+}
+
+.light .border-\[\#2a2e35\] {
+  border-color: #dbe0e7;
+}
+
+.light .text-\[\#f2f1ec\] {
+  color: #121417;
+}
+
+.light .text-\[\#a8adb6\] {
+  color: #5b6470;
+}
+
+.light .hover\:text-\[\#f2f1ec\]:hover {
+  color: #121417;
+}
+
+.light .nav-link:hover {
+  color: #121417;
+}
+
+.light .nav-link-active {
+  color: #121417;
+}
+
+.light .lift:hover {
+  box-shadow: 0 8px 20px rgba(18, 20, 23, 0.12);
+}

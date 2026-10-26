@@ -26,8 +26,8 @@ export default function EvaluationVisual() {
       </p>
       <div className="mt-6 grid gap-4 sm:grid-cols-2">
         {[
-          { rank: "#1 · Ranked first", label: "Sample A", tone: "border-[#3b82f6]" },
-          { rank: "#2 · Ranked second", label: "Sample B", tone: "border-[#2a2e35]" },
+          { rank: "#1 · Ranked first", label: "Sample A", tone: "border-[#3b82f6]", bars: [95, 90, 92] },
+          { rank: "#2 · Ranked second", label: "Sample B", tone: "border-[#2a2e35]", bars: [65, 70, 60] },
         ].map((response) => (
           <article key={response.label} className={`anim-rise lift min-w-0 rounded-lg border ${response.tone} bg-[#121417] p-4`}>
             <div className="flex flex-wrap items-center justify-between gap-2">
@@ -40,7 +40,7 @@ export default function EvaluationVisual() {
                   <Check size={16} className="shrink-0 text-[#3b82f6]" aria-hidden="true" />
                   <span className="w-24 shrink-0 text-[#f2f1ec]">{criterion}</span>
                   <span className="anim-bar-loop-combined block h-2 flex-1 rounded-full bg-[#2a2e35]" style={{ animationDelay: `${index * 0.2}s` }} aria-hidden="true">
-                    <span className="block h-full w-4/5 rounded-full bg-[#3b82f6]" />
+                    <span className="block h-full rounded-full bg-[#3b82f6]" style={{ width: `${response.bars[index]}%` }} />
                   </span>
                   <span className="shrink-0 text-xs">Checked</span>
                 </li>
