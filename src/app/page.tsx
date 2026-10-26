@@ -11,15 +11,18 @@ export default function Home() {
   return (
     <div className="mx-auto max-w-5xl min-w-0 px-5 py-8 sm:py-12">
       <section aria-labelledby="intro-heading">
-        <p className="text-sm font-medium tracking-wide text-[#3b82f6]">
-          {profile.greeting}
-        </p>
-        <h1 id="intro-heading" className="mt-2 max-w-3xl text-[28px] font-semibold leading-[1.15] tracking-tight sm:text-4xl">
-          {profile.headline}
-        </h1>
-        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#a8adb6] sm:text-lg">
-          {profile.introduction}
-        </p>
+        <div className="anim-rise relative overflow-hidden rounded-2xl border border-[#2a2e35] bg-[#1a1d22] p-6 shadow-[0_16px_40px_rgba(0,0,0,0.25)] sm:p-8">
+          <span className="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-[#3b82f6] via-[#0ea5e9] to-transparent" aria-hidden="true" />
+          <p className="anim-rise text-sm font-medium tracking-wide text-[#3b82f6]" style={{ animationDelay: "0.1s" }}>
+            {profile.greeting}
+          </p>
+          <h1 id="intro-heading" className="anim-rise mt-2 max-w-3xl text-[28px] font-semibold leading-[1.15] tracking-tight sm:text-4xl" style={{ animationDelay: "0.2s" }}>
+            {profile.headline}
+          </h1>
+          <p className="anim-rise mt-4 max-w-2xl text-base leading-relaxed text-[#a8adb6] sm:text-lg" style={{ animationDelay: "0.3s" }}>
+            {profile.introduction}
+          </p>
+        </div>
         <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <p className="anim-pill-rise inline-flex min-w-0 flex-wrap items-center gap-2 rounded-full border border-[#2a2e35] px-4 py-2 text-sm text-[#a8adb6]" style={{ animationDelay: "0.05s" }}>
             <EthiopiaFlag /> Ethiopia · <UkFlag /> United Kingdom
