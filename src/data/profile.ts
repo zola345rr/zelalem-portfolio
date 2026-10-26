@@ -15,10 +15,9 @@ export type ExperienceItem = {
 export const profile = {
   name: "Zelalem Addisu",
   greeting: "Hi, I'm Zelalem Addisu",
-  headline:
-    "Computer Science Graduate | Data Engineering, AI Training & LLM Evaluation",
+  headline: "Computer Science Graduate | AI Training & LLM Evaluation",
   introduction:
-    "I'm from Ethiopia and live in the United Kingdom. I work in data engineering, AI training and LLM evaluation: preparing and validating the data these systems depend on, and assessing model responses for accuracy, relevance and instruction following.",
+    "I work across data engineering, AI training and LLM evaluation, and data analysis — preparing and validating training data, labelling it to a clear brief, evaluating and ranking model responses, checking quality, and verifying facts against reliable sources. I use Python, SQL, R, Bash/Linux and Git; ETL, Airflow, PostgreSQL, Docker and REST APIs; Pandas, NumPy, scikit-learn and PyTorch; and Power BI and Streamlit for analysis and visualisation.",
   country: "Ethiopia",
   residence: "United Kingdom",
   locationLine:

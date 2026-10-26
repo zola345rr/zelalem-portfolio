@@ -26,13 +26,13 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Zelalem Addisu | Data Engineering, AI Training & LLM Evaluation",
+  title: "Zelalem Addisu | AI Training & LLM Evaluation",
   description:
-    "Portfolio of Zelalem Addisu, a Computer Science graduate from Ethiopia living in the United Kingdom, working in data engineering, AI data training, and LLM evaluation.",
+    "Portfolio of Zelalem Addisu, a Computer Science graduate working across data engineering, AI training and LLM evaluation, and data analysis — preparing and validating training data, labelling it to a clear brief, evaluating and ranking model responses, checking quality, and verifying facts against reliable sources.",
   openGraph: {
-    title: "Zelalem Addisu | Data Engineering, AI Training & LLM Evaluation",
+    title: "Zelalem Addisu | AI Training & LLM Evaluation",
     description:
-      "Portfolio of Zelalem Addisu, a Computer Science graduate from Ethiopia living in the United Kingdom, working in data engineering, AI data training, and LLM evaluation.",
+      "Portfolio of Zelalem Addisu, a Computer Science graduate working across data engineering, AI training and LLM evaluation, and data analysis — preparing and validating training data, labelling it to a clear brief, evaluating and ranking model responses, checking quality, and verifying facts against reliable sources.",
     type: "website",
   },
 };
