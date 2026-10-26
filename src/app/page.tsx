@@ -9,18 +9,18 @@ import { profile, projectAreas } from "@/data/profile";
 
 export default function Home() {
   return (
-    <div className="mx-auto max-w-5xl min-w-0 px-5 py-12 sm:py-16">
+    <div className="mx-auto max-w-5xl min-w-0 px-5 py-8 sm:py-12">
       <section aria-labelledby="intro-heading">
         <p className="text-sm font-medium tracking-wide text-[#3b82f6]">
           {profile.greeting}
         </p>
-        <h1 id="intro-heading" className="mt-3 max-w-3xl text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
+        <h1 id="intro-heading" className="mt-2 max-w-3xl text-[28px] font-semibold leading-[1.15] tracking-tight sm:text-4xl">
           {profile.headline}
         </h1>
-        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[#a8adb6]">
+        <p className="mt-4 max-w-2xl text-base leading-relaxed text-[#a8adb6] sm:text-lg">
           {profile.introduction}
         </p>
-        <div className="mt-5 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <div className="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
           <p className="anim-pill-rise inline-flex min-w-0 flex-wrap items-center gap-2 rounded-full border border-[#2a2e35] px-4 py-2 text-sm text-[#a8adb6]" style={{ animationDelay: "0.05s" }}>
             <EthiopiaFlag /> Ethiopia · <UkFlag /> United Kingdom
           </p>
@@ -28,7 +28,7 @@ export default function Home() {
             Remote · International
           </p>
         </div>
-        <div className="mt-7 grid grid-cols-2 gap-3 lg:flex lg:flex-wrap">
+        <div className="mt-6 grid grid-cols-2 gap-3 lg:flex lg:flex-wrap">
           <Link
             href="/projects"
             className="anim-btn-blue lift inline-flex items-center justify-center gap-2 rounded-md bg-[#3b82f6] px-4 py-2.5 font-medium text-white transition-colors hover:bg-[#2563eb]"
@@ -65,14 +65,14 @@ export default function Home() {
 
       <EvaluationVisual />
 
-      <section className="anim-rise lift mt-10 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5" aria-label="How reviews are done">
+      <section className="anim-rise lift mt-8 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5" aria-label="How reviews are done">
         <p className="font-semibold">{profile.reviewNote}.</p>
         <p className="mt-2 text-sm leading-relaxed text-[#a8adb6]">
           Every response, label, fact and ranking is checked before delivery.
         </p>
       </section>
 
-      <section className="mt-16" aria-labelledby="projects-heading">
+      <section className="mt-12" aria-labelledby="projects-heading">
         <SectionHeading title="Projects">
           {profile.projectsIntro}
         </SectionHeading>
@@ -96,7 +96,7 @@ export default function Home() {
         </p>
       </section>
 
-      <section className="mt-16" aria-labelledby="skills-heading">
+      <section className="mt-12" aria-labelledby="skills-heading">
         <SectionHeading title="Skills">
           Tools Zelalem works with, grouped by area, plus the evaluation and
           review work behind the projects. No proficiency level is claimed for
@@ -118,7 +118,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-16" aria-labelledby="experience-heading">
+      <section className="mt-12" aria-labelledby="experience-heading">
         <SectionHeading title="Experience & education" />
         <div className="grid gap-5 sm:grid-cols-2">
           <article className="anim-rise lift min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5">
@@ -151,7 +151,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mt-16 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-6" aria-labelledby="contact-heading">
+      <section className="mt-12 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-6" aria-labelledby="contact-heading">
         <h2 id="contact-heading" className="text-2xl font-semibold">Contact</h2>
         <p className="mt-2 text-[#a8adb6]">{profile.contactIntro}</p>
         <div className="mt-5 grid gap-3 sm:flex sm:flex-wrap">

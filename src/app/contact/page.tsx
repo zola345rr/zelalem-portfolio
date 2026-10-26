@@ -10,8 +10,8 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-5xl min-w-0 px-5 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">Contact</h1>
+    <div className="mx-auto max-w-5xl min-w-0 px-5 py-8 sm:py-12">
+      <h1 className="text-[28px] font-semibold tracking-tight sm:text-3xl">Contact</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-[#a8adb6]">
         I&apos;m from Ethiopia and live in the United Kingdom. {profile.contactIntro}
       </p>

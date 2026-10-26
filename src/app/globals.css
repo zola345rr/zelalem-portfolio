@@ -8,11 +8,18 @@
   --color-muted: #a8adb6;
   --color-accent: #3b82f6;
   --color-accent-hover: #2563eb;
+  --font-sans: "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Libre Franklin", "Public Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 html {
   scroll-behavior: smooth;
   overflow-x: clip;
+  /* Stop mobile browsers inflating text on narrow screens, which made
+     the Vercel headline look much bigger than the hosted version. */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 body {
@@ -20,6 +27,35 @@ body {
   color: var(--color-offwhite);
   overflow-x: clip;
   min-width: 0;
+  font-family: var(--font-sans);
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: var(--font-display);
+  letter-spacing: -0.01em;
+}
+
+/* Small tracked labels (e.g. DATA QUALITY) use the mono font, as on
+   the hosted version. */
+.tracking-widest {
+  font-family: var(--font-mono);
+}
+
+/* Hosted-style rounding, applied globally so every card/button matches
+   without editing each component: cards softer, buttons slightly rounder. */
+.rounded-lg {
+  border-radius: 1rem;
+}
+
+.rounded-md {
+  border-radius: 0.625rem;
 }
 
 a:focus-visible,
@@ -203,7 +239,7 @@ button:focus-visible {
 }
 
 .anim-page {
-  animation: page-fade 0.45s ease both;
+  animation: page-fade 0.4s ease-out both;
 }
 
 .nav-link {
@@ -245,12 +281,12 @@ button:focus-visible {
 }
 
 .lift {
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out, border-color 0.25s ease-out;
 }
 
 .lift:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.22);
 }
 
 @media (prefers-reduced-motion: reduce) {

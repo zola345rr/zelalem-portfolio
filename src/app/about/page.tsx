@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-5xl min-w-0 px-5 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">About</h1>
+    <div className="mx-auto max-w-5xl min-w-0 px-5 py-8 sm:py-12">
+      <h1 className="text-[28px] font-semibold tracking-tight sm:text-3xl">About</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-[#a8adb6]">{profile.introduction}</p>
       <dl className="mt-6 grid max-w-2xl gap-3 sm:grid-cols-2">
         <div className="flex items-center gap-2 rounded-lg border border-[#2a2e35] bg-[#1a1d22] px-4 py-3 text-sm">

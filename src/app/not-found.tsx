@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function NotFound() {
   return (
     <div className="mx-auto max-w-5xl px-5 py-16">
-      <h1 className="text-3xl font-semibold tracking-tight">Page not found</h1>
+      <h1 className="text-[28px] font-semibold tracking-tight sm:text-3xl">Page not found</h1>
       <p className="mt-4 max-w-xl leading-relaxed text-[#a8adb6]">
         That page does not exist. Try the home page or the projects collection instead.
       </p>

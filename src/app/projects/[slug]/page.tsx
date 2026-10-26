@@ -31,9 +31,9 @@ export default async function ProjectPage({
   if (!project) notFound();
 
   return (
-    <div className="mx-auto max-w-3xl px-5 py-12">
+    <div className="mx-auto max-w-3xl px-5 py-8 sm:py-12">
       <p className="text-sm text-[#3b82f6]">{project.category} · {project.status}</p>
-      <h1 className="mt-3 text-3xl font-semibold tracking-tight">{project.title}</h1>
+      <h1 className="mt-3 text-[28px] font-semibold tracking-tight sm:text-3xl">{project.title}</h1>
       <p className="mt-4 text-lg leading-relaxed text-[#a8adb6]">{project.summary}</p>
 
       <ul className="mt-6 flex flex-wrap gap-2">

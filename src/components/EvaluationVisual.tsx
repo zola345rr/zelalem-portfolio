@@ -8,7 +8,7 @@ export default function EvaluationVisual() {
   return (
     <section
       aria-label="Data quality in action"
-      className="anim-rise mt-10 overflow-hidden rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5 sm:p-6"
+      className="anim-rise mt-8 overflow-hidden rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5 sm:p-6"
     >
       <div className="flex flex-wrap items-center justify-between gap-3">
         <p className="text-xs font-semibold tracking-widest text-[#3b82f6]">DATA QUALITY</p>

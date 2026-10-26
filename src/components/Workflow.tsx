@@ -4,7 +4,7 @@ import { profile } from "@/data/profile";
 export default function Workflow() {
   return (
     <section aria-labelledby="workflow-heading" className="mt-12">
-      <h2 id="workflow-heading" className="text-2xl font-semibold tracking-tight">How the work flows</h2>
+      <h2 id="workflow-heading" className="text-xl font-semibold tracking-tight sm:text-2xl">How the work flows</h2>
       <ol className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {profile.workflow.map((step, index) => (
           <li key={step.step} className="anim-rise lift min-w-0 rounded-lg border border-[#2a2e35] bg-[#1a1d22] p-5" style={{ animationDelay: `${index * 0.1}s` }}>

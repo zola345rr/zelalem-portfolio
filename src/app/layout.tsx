@@ -1,18 +1,28 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Libre_Franklin, Public_Sans, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PageFade from "@/components/PageFade";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// Hosted portfolio font set: Libre Franklin for headings, Public Sans
+// for body, JetBrains Mono for small labels.
+const libreFranklin = Libre_Franklin({
+  variable: "--font-libre",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const publicSans = Public_Sans({
+  variable: "--font-public",
   subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const jetBrainsMono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  weight: ["400", "500", "600"],
 });
 
 export const metadata: Metadata = {
@@ -31,7 +41,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${libreFranklin.variable} ${publicSans.variable} ${jetBrainsMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-[#121417] text-[#f2f1ec]">
         <script

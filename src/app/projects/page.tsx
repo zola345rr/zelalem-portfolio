@@ -11,8 +11,8 @@ export default function ProjectsPage() {
   const visible = filter === "All" ? projectAreas : projectAreas.filter((p) => p.category === filter);
 
   return (
-    <div className="mx-auto max-w-5xl min-w-0 px-5 py-12">
-      <h1 className="text-3xl font-semibold tracking-tight">Projects</h1>
+    <div className="mx-auto max-w-5xl min-w-0 px-5 py-8 sm:py-12">
+      <h1 className="text-[28px] font-semibold tracking-tight sm:text-3xl">Projects</h1>
       <p className="mt-4 max-w-2xl leading-relaxed text-[#a8adb6]">
         {profile.projectsIntro}
       </p>
