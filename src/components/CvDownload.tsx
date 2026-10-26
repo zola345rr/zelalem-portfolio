@@ -48,7 +48,7 @@ export default function CvDownload({ className = "" }: { className?: string }) {
     <button
       type="button"
       onClick={download}
-      className={`inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#3b82f6] px-4 py-2.5 font-medium text-white transition-colors hover:bg-[#2563eb] sm:w-auto ${className}`}
+      className={`anim-pulse-blue lift inline-flex w-full items-center justify-center gap-2 rounded-md bg-[#3b82f6] px-4 py-2.5 font-medium text-white transition-colors hover:bg-[#2563eb] sm:w-auto ${className}`}
     >
       <Download size={18} aria-hidden="true" /> Download CV
     </button>

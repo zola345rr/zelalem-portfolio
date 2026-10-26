@@ -2,7 +2,7 @@
 // legible at pill size on both mobile and desktop.
 export function EthiopiaFlag({ label = "Ethiopia" }: { label?: string }) {
   return (
-    <svg width="22" height="15" viewBox="0 0 60 40" role="img" aria-label={label} aria-hidden={false} className="shrink-0 rounded-[2px]">
+    <svg width="22" height="15" viewBox="0 0 60 40" role="img" aria-label={label} aria-hidden={false} className="anim-flag shrink-0 rounded-[2px]">
       <rect width="60" height="13.33" fill="#078930" />
       <rect y="13.33" width="60" height="13.33" fill="#fcdd09" />
       <rect y="26.66" width="60" height="13.34" fill="#da121a" />
@@ -14,7 +14,7 @@ export function EthiopiaFlag({ label = "Ethiopia" }: { label?: string }) {
 
 export function UkFlag({ label = "United Kingdom" }: { label?: string }) {
   return (
-    <svg width="22" height="15" viewBox="0 0 60 40" role="img" aria-label={label} aria-hidden={false} className="shrink-0 rounded-[2px]">
+    <svg width="22" height="15" viewBox="0 0 60 40" role="img" aria-label={label} aria-hidden={false} className="anim-flag shrink-0 rounded-[2px]">
       <rect width="60" height="40" fill="#012169" />
       <path d="M0 0 L60 40 M60 0 L0 40" stroke="#ffffff" strokeWidth="8" />
       <path d="M0 0 L60 40 M60 0 L0 40" stroke="#c8102e" strokeWidth="3" />

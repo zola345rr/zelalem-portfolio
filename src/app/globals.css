@@ -28,8 +28,11 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
-/* Restrained hero/button animation: rise-in on load, gentle pulse
-   on the primary button only. Reduced-motion users get none of it. */
+/* Restrained but continuous animation, matching the hosted portfolio:
+   staggered rise-in on load, a gentle pulsing glow in each button's own
+   colour, swaying flags, and looping evaluation motion. All of it is
+   subtle (small shadows, 2-3px movement) — no rainbow colours, no
+   floating images, no loud glow. Reduced-motion users get none of it. */
 @keyframes btn-rise {
   from {
     opacity: 0;
@@ -41,6 +44,7 @@ button:focus-visible {
   }
 }
 
+/* Generic blue pulse, kept for the review indicator. */
 @keyframes btn-pulse {
   0%,
   100% {
@@ -49,6 +53,37 @@ button:focus-visible {
   50% {
     box-shadow: 0 0 0 6px rgba(59, 130, 246, 0);
   }
+}
+
+/* Per-button pulses: same rhythm, each button's own colour only. */
+@keyframes pulse-blue {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(59, 130, 246, 0); }
+}
+
+@keyframes pulse-linkedin {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(10, 102, 194, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(10, 102, 194, 0); }
+}
+
+@keyframes pulse-teal {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(15, 118, 110, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(15, 118, 110, 0); }
+}
+
+@keyframes pulse-green {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.35); }
+  50% { box-shadow: 0 0 0 6px rgba(37, 211, 102, 0); }
+}
+
+@keyframes flag-sway {
+  0%, 100% { transform: rotate(-2deg); }
+  50% { transform: rotate(2deg); }
+}
+
+@keyframes pill-drift {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
 }
 
 @keyframes bar-grow {
@@ -60,17 +95,108 @@ button:focus-visible {
   }
 }
 
+/* Looping bar motion after the initial grow: a gentle 0.92 -> 1 sway. */
+@keyframes bar-loop {
+  0%, 100% { transform: scaleX(0.92); }
+  50% { transform: scaleX(1); }
+}
+
+@keyframes dot-pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.45);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 0 5px rgba(59, 130, 246, 0);
+    transform: scale(1.25);
+  }
+}
+
+/* 'backwards' (not 'both') so the rise does not keep overriding
+   hover transforms once it has finished. */
 .anim-rise {
-  animation: btn-rise 0.6s ease both;
+  animation: btn-rise 0.6s ease backwards;
 }
 
 .anim-pulse {
   animation: btn-pulse 2.4s ease-in-out infinite;
 }
 
+.anim-pulse-blue {
+  animation: pulse-blue 2.8s ease-in-out infinite;
+}
+
+.anim-pulse-linkedin {
+  animation: pulse-linkedin 2.8s ease-in-out infinite;
+}
+
+.anim-pulse-teal {
+  animation: pulse-teal 2.8s ease-in-out infinite;
+}
+
+.anim-pulse-green {
+  animation: pulse-green 2.8s ease-in-out infinite;
+}
+
+.anim-flag {
+  transform-box: fill-box;
+  transform-origin: bottom center;
+  animation: flag-sway 3.2s ease-in-out infinite;
+}
+
+.anim-pill {
+  animation: pill-drift 4.5s ease-in-out infinite;
+}
+
+/* Combined classes are required: two separate `animation` classes on one
+   element do not stack — the later stylesheet rule wins and the other
+   animation is lost. These run rise-in first, then the continuous loop. */
+.anim-pill-rise {
+  animation: btn-rise 0.6s ease backwards, pill-drift 4.5s ease-in-out 0.6s infinite;
+}
+
+.anim-btn-blue {
+  animation: btn-rise 0.6s ease backwards, pulse-blue 2.8s ease-in-out 0.6s infinite;
+}
+
+.anim-btn-linkedin {
+  animation: btn-rise 0.6s ease backwards, pulse-linkedin 2.8s ease-in-out 0.6s infinite;
+}
+
+.anim-btn-teal {
+  animation: btn-rise 0.6s ease backwards, pulse-teal 2.8s ease-in-out 0.6s infinite;
+}
+
+.anim-btn-green {
+  animation: btn-rise 0.6s ease backwards, pulse-green 2.8s ease-in-out 0.6s infinite;
+}
+
+.anim-bar-loop-combined {
+  transform-origin: left;
+  animation: bar-grow 1.2s ease both, bar-loop 3.5s ease-in-out 1.2s infinite;
+}
+
 .anim-bar {
   transform-origin: left;
   animation: bar-grow 1.2s ease both;
+}
+
+.anim-bar-loop {
+  transform-origin: left;
+  animation: bar-loop 3.5s ease-in-out infinite;
+}
+
+.anim-dot {
+  animation: dot-pulse 2.2s ease-in-out infinite;
+}
+
+.lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 @media (prefers-reduced-motion: reduce) {
